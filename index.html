@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Sprint — Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --accent: #fbbf24;
+            --success: #10b981;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --text-muted: #888;
+            --bg: #f5f4f0;
+            --bg-card: #ffffff;
+            --border: #e5e5e0;
+            --radius: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body.dark-mode {
+            --text-primary: #e8e6e3;
+            --text-secondary: #a8a29e;
+            --text-muted: #78716c;
+            --bg: #141414;
+            --bg-card: #1e1e1e;
+            --border: #2a2a2a;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.3);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-brand {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .header-link:hover { color: var(--primary); }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ===== LAYOUT ===== */
+        .dashboard {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 24px 60px;
+        }
+
+        /* ===== CURRENT WEEK HERO ===== */
+        .current-week-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            padding: 40px 44px;
+            color: white;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .current-week-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+        .current-week-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero-eyebrow {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            opacity: 0.85;
+            margin-bottom: 28px;
+            max-width: 480px;
+            line-height: 1.5;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        }
+
+        .hero-meta {
+            font-size: 13px;
+            opacity: 0.65;
+            font-weight: 500;
+        }
+
+        /* ===== PROGRESS STRIP ===== */
+        .progress-strip {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px 24px;
+            margin-bottom: 28px;
+            animation: slideUp 0.4s ease 0.05s both;
+        }
+
+        .progress-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .progress-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            min-width: 36px;
+            text-align: right;
+        }
+
+        .progress-stats {
+            display: flex;
+            gap: 24px;
+            margin-left: auto;
+            padding-left: 24px;
+            border-left: 1px solid var(--border);
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-num {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== WEEK LIST ===== */
+        .weeks-heading {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .weeks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .week-row {
+            display: flex;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            animation: slideUp 0.35s ease both;
+            gap: 20px;
+        }
+        .week-row:nth-child(1) { animation-delay: 0.08s; }
+        .week-row:nth-child(2) { animation-delay: 0.12s; }
+        .week-row:nth-child(3) { animation-delay: 0.16s; }
+        .week-row:nth-child(4) { animation-delay: 0.20s; }
+        .week-row:nth-child(5) { animation-delay: 0.24s; }
+
+        .week-row:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        .week-row.is-current {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.12), var(--shadow-md);
+        }
+
+        .week-row.is-complete { opacity: 0.65; }
+        .week-row.is-complete:hover { opacity: 1; }
+
+        .week-num {
+            width: 44px;
+            height: 44px;
+            background: var(--bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 15px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .week-row.is-complete .week-num {
+            background: var(--success);
+            color: white;
+        }
+
+        .week-info { flex: 1; min-width: 0; }
+
+        .week-info-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--text-primary);
+        }
+
+        .week-info-cap {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .week-progress-mini {
+            width: 80px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .week-progress-mini-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        .week-row.is-complete .week-progress-mini-fill { background: var(--success); }
+
+        .week-arrow {
+            color: var(--text-muted);
+            font-size: 14px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .week-row:hover .week-arrow {
+            transform: translateX(3px);
+            color: var(--primary);
+        }
+
+        .current-tag {
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* ===== FOOTER ===== */
+        .dashboard-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-actions { display: flex; gap: 8px; }
+
+        .footer-btn {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+        .footer-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .footer-text { font-size: 12px; color: var(--text-muted); }
+        .footer-text a { color: var(--primary); text-decoration: none; }
+        .footer-text a:hover { text-decoration: underline; }
+
+        .celebration-hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .dashboard { padding: 20px 16px 40px; }
+            .current-week-hero { padding: 28px 24px; }
+            .hero-title { font-size: 24px; }
+            .hero-subtitle { font-size: 14px; }
+            .hero-cta { padding: 12px 24px; font-size: 14px; }
+
+            .progress-strip { flex-wrap: wrap; gap: 12px; }
+            .progress-stats {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+                padding-top: 12px;
+                border-top: 1px solid var(--border);
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .week-row { padding: 16px; gap: 14px; }
+            .week-progress-mini { display: none; }
+            .dashboard-footer { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 12px 16px; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Redirect first-time visitors to welcome page -->
+    <script>
+        if (!localStorage.getItem('sprintOnboarded')) {
+            window.location.href = 'welcome.html';
+        }
+    </script>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-brand">AI Readiness Sprint</div>
+        <div class="header-right">
+            <a href="welcome.html" class="header-link">How It Works</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <!-- Current Week Hero -->
+        <div class="current-week-hero" id="currentWeekHero">
+            <div class="hero-content">
+                <div class="hero-eyebrow" id="heroEyebrow">Week 1 of 5</div>
+                <h1 class="hero-title" id="heroTitle">The Learner's Posture</h1>
+                <p class="hero-subtitle" id="heroSubtitle">Practice shifting from "knower" to "learner" by inviting AI to challenge your expertise.</p>
+                <div class="hero-actions">
+                    <a href="week1.html" class="hero-cta" id="heroCta">
+                        Start Week 1 <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="hero-meta" id="heroMeta">Learning Agility</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Strip -->
+        <div class="progress-strip">
+            <span class="progress-label">Progress</span>
+            <div class="progress-track">
+                <div class="progress-fill" id="overallProgressBar" style="width: 0%"></div>
+            </div>
+            <span class="progress-value" id="totalProgress">0%</span>
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <div class="stat-num" id="unlockedWeeks">0<span style="font-weight:500;color:var(--text-muted)">/5</span></div>
+                    <div class="stat-label">Unlocked</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" id="streak">0 <span style="font-size:14px">🔥</span></div>
+                    <div class="stat-label">Streak</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week List -->
+        <div class="weeks-heading">All Weeks</div>
+        <div class="weeks-list" id="weeksList">
+            <a href="week1.html" class="week-row" data-week="1">
+                <div class="week-num">1</div>
+                <div class="week-info">
+                    <div class="week-info-title">The Learner's Posture</div>
+                    <div class="week-info-cap">Learning Agility</div>
+                </div>
+                <div class="week-progress-mini"><div class="week-progress-mini-fill" data-week-progress="1" style="width:0%"></div></div>
+                <span class="week-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="week2.html" class="week-row" data-week="2">
+                <div class="week-num">2</div>
+                <div class="week-info">
+                    <div class="week-info-title">Experiment Like You Mean It</div>
+                    <div class="week-info-cap">Learning Agility</div>
+                </div>
+                <div class="week-progress-mini"><div class="week-progress-mini-fill" data-week-progress="2" style="width:0%"></div></div>
+                <span class="week-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="week3.html" class="week-row" data-week="3">
+                <div class="week-num">3</div>
+                <div class="week-info">
+                    <div class="week-info-title">Learning Out Loud</div>
+                    <div class="week-info-cap">Psychological Safety</div>
+                </div>
+                <div class="week-progress-mini"><div class="week-progress-mini-fill" data-week-progress="3" style="width:0%"></div></div>
+                <span class="week-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="week4.html" class="week-row" data-week="4">
+                <div class="week-num">4</div>
+                <div class="week-info">
+                    <div class="week-info-title">Integration &amp; Consolidation</div>
+                    <div class="week-info-cap">Reflective Practice</div>
+                </div>
+                <div class="week-progress-mini"><div class="week-progress-mini-fill" data-week-progress="4" style="width:0%"></div></div>
+                <span class="week-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            <a href="week5.html" class="week-row" data-week="5">
+                <div class="week-num">5</div>
+                <div class="week-info">
+                    <div class="week-info-title">Your New Operating System</div>
+                    <div class="week-info-cap">Systems Thinking</div>
+                </div>
+                <div class="week-progress-mini"><div class="week-progress-mini-fill" data-week-progress="5" style="width:0%"></div></div>
+                <span class="week-arrow"><i class="fas fa-chevron-right"></i></span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="dashboard-footer">
+            <div class="footer-actions">
+                <button class="footer-btn" onclick="exportProgress()"><i class="fas fa-download"></i> Export</button>
+                <button class="footer-btn" onclick="resetProgress()"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+            <div class="footer-text">
+                &copy; 2024 AI Readiness Sprint &middot; <a href="welcome.html">How It Works</a>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        var weekData = {
+            1: { title: "The Learner's Posture", cap: "Learning Agility", desc: "Practice shifting from 'knower' to 'learner' by inviting AI to challenge your expertise." },
+            2: { title: "Experiment Like You Mean It", cap: "Learning Agility", desc: "Learn to iterate rapidly by producing rough drafts with AI and refining through cycles." },
+            3: { title: "Learning Out Loud", cap: "Psychological Safety", desc: "Build psychological safety by sharing your messy AI experiments before they're polished." },
+            4: { title: "Integration & Consolidation", cap: "Reflective Practice", desc: "Pause to reflect on what's working, identify patterns, and design your 'plus-one' habit." },
+            5: { title: "Your New Operating System", cap: "Systems Thinking", desc: "Redesign one core workflow by mapping where AI creates leverage and testing it." }
+        };
+
+        function toggleTheme() {
+            var body = document.body;
+            var icon = document.querySelector('.theme-toggle i');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function loadTheme() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var icon = document.querySelector('.theme-toggle i');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                if (icon) icon.className = 'fas fa-sun';
+            }
+        }
+
+        function updateHero() {
+            var progress = JSON.parse(localStorage.getItem('aiReadinessProgress') || '{}');
+            var heroEl = document.getElementById('currentWeekHero');
+            var eyebrow = document.getElementById('heroEyebrow');
+            var title = document.getElementById('heroTitle');
+            var subtitle = document.getElementById('heroSubtitle');
+            var cta = document.getElementById('heroCta');
+            var meta = document.getElementById('heroMeta');
+
+            var currentWeek = 1;
+            var allComplete = true;
+
+            for (var w = 1; w <= 5; w++) {
+                var key = 'week' + w;
+                if (!progress.completedWeeks || progress.completedWeeks.indexOf(key) === -1) {
+                    currentWeek = w;
+                    allComplete = false;
+                    break;
+                }
+            }
+
+            var hasStarted = progress.completedWeeks && progress.completedWeeks.length > 0;
+
+            if (allComplete) {
+                heroEl.classList.add('celebration-hero');
+                eyebrow.textContent = 'SPRINT COMPLETE';
+                title.textContent = 'You did it! \uD83C\uDF89';
+                subtitle.textContent = 'All 5 weeks done. Revisit any week or grab your certificate below.';
+                cta.innerHTML = 'Download Certificate <i class="fas fa-trophy"></i>';
+                cta.href = '#';
+                cta.onclick = function(e) { e.preventDefault(); if (typeof generateCertificate === 'function') generateCertificate(); };
+                meta.textContent = '';
+            } else {
+                var wd = weekData[currentWeek];
+                eyebrow.textContent = 'WEEK ' + currentWeek + ' OF 5';
+                title.textContent = wd.title;
+                subtitle.textContent = wd.desc;
+                meta.textContent = wd.cap;
+
+                if (hasStarted) {
+                    cta.innerHTML = 'Continue Week ' + currentWeek + ' <i class="fas fa-arrow-right"></i>';
+                } else {
+                    cta.innerHTML = 'Start Week 1 <i class="fas fa-arrow-right"></i>';
+                }
+                cta.href = 'week' + currentWeek + '.html';
+                cta.onclick = null;
+            }
+
+            // Update week rows
+            var rows = document.querySelectorAll('.week-row');
+            for (var i = 0; i < rows.length; i++) {
+                var weekNum = rows[i].getAttribute('data-week');
+                var weekKey = 'week' + weekNum;
+                rows[i].classList.remove('is-current', 'is-complete');
+
+                if (progress.completedWeeks && progress.completedWeeks.indexOf(weekKey) !== -1) {
+                    rows[i].classList.add('is-complete');
+                    var numEl = rows[i].querySelector('.week-num');
+                    numEl.innerHTML = '<i class="fas fa-check" style="font-size:14px"></i>';
+                } else if (parseInt(weekNum) === currentWeek && !allComplete) {
+                    rows[i].classList.add('is-current');
+                    var titleEl = rows[i].querySelector('.week-info-title');
+                    if (!titleEl.querySelector('.current-tag')) {
+                        titleEl.insertAdjacentHTML('beforeend', ' <span class="current-tag">Current</span>');
+                    }
+                }
+            }
+        }
+
+        function updateDashboardStats() {
+            var progress = JSON.parse(localStorage.getItem('aiReadinessProgress') || '{}');
+            var overallProgress = 0;
+            var weekProgresses = progress.weekProgress || {};
+            var vals = Object.values(weekProgresses);
+            if (vals.length > 0) {
+                var total = 0;
+                for (var i = 0; i < vals.length; i++) total += vals[i];
+                overallProgress = Math.round(total / vals.length);
+            }
+
+            var unlockedCount = progress.unlockedWeeks ? progress.unlockedWeeks.length : 0;
+            var streak = progress.streakCount || 0;
+
+            var totalEl = document.getElementById('totalProgress');
+            var unlockedEl = document.getElementById('unlockedWeeks');
+            var streakEl = document.getElementById('streak');
+            var barEl = document.getElementById('overallProgressBar');
+
+            if (totalEl) totalEl.textContent = overallProgress + '%';
+            if (unlockedEl) unlockedEl.innerHTML = unlockedCount + '<span style="font-weight:500;color:var(--text-muted)">/5</span>';
+            if (streakEl) streakEl.innerHTML = streak + ' <span style="font-size:14px">\uD83D\uDD25</span>';
+            if (barEl) barEl.style.width = overallProgress + '%';
+
+            for (var w = 1; w <= 5; w++) {
+                var wp = (weekProgresses['week' + w] || 0);
+                var fill = document.querySelector('[data-week-progress="' + w + '"]');
+                if (fill) fill.style.width = wp + '%';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            setTimeout(function() {
+                updateHero();
+                updateDashboardStats();
+            }, 50);
+        });
+
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) { updateHero(); updateDashboardStats(); }
+        });
+    </script>
+</body>
+</html>

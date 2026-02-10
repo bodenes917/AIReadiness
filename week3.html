@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3: Learning Out Loud | AI Readiness Sprint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="week-styles.css">
+    <style>
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    </style>
+</head>
+<body data-week="3" data-week-title="Learning Out Loud">
+    
+    <!-- Top Navigation -->
+    <nav class="week-nav">
+        <div class="container">
+            <a href="index.html" class="nav-back">← Sprint Home</a>
+            <div class="week-indicator">Week 3 of 5</div>
+        </div>
+    </nav>
+
+    <!-- Step Navigation Tabs -->
+    <div class="step-nav" id="stepNav">
+        <div class="step-nav-inner">
+            <a class="step-tab active" data-target="welcome" onclick="scrollToSection('welcome')">
+                <span class="step-num">1</span> Welcome
+            </a>
+            <a class="step-tab" data-target="video" onclick="scrollToSection('video')">
+                <span class="step-num">2</span> Watch
+            </a>
+            <a class="step-tab" data-target="experiment" onclick="scrollToSection('experiment')">
+                <span class="step-num">3</span> Experiment
+            </a>
+            <a class="step-tab" data-target="eko" onclick="scrollToSection('eko')">
+                <span class="step-num">4</span> Reflect
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until password entered) -->
+    <div class="week-content" style="display: none;">
+        
+        <!-- Compact Hero -->
+        <div class="week-hero">
+            <div class="container">
+                <div class="week-badge">Week 3</div>
+                <h1 class="week-hero-title">Learning Out Loud</h1>
+                <p class="week-hero-subtitle">The Visibility Advantage</p>
+                <div class="capability-badge">Core Capability: Psychological Safety</div>
+            </div>
+        </div>
+
+        <!-- SINGLE-COLUMN LAYOUT -->
+        <div class="week-layout" style="grid-template-columns: 1fr;">
+            
+            <!-- ===== MAIN CONTENT ===== -->
+            <div class="main-content">
+
+                <!-- Step 1: Welcome & Goal -->
+                <section class="content-section" id="welcome">
+                    <div class="section-icon">👋</div>
+                    <h2>Welcome & Weekly Goal</h2>
+                    <p>Welcome to Week 3. You've practiced the learner's posture. You've practiced iteration. Now it's time to practice something harder: learning out loud.</p>
+                    
+                    <p>Most of us learn in private. We experiment behind closed doors. We struggle in silence. We only share our work once it's polished, once we've figured it out, once we can present it with confidence. We've been trained to hide the mess—to only show the after, never the during.</p>
+
+                    <p>That privacy costs you. Connection. Feedback. Accelerated learning. When you learn in private, you miss the insights that come from other people's perspectives. You miss the moment where someone says "Oh, I tried that too—here's what I learned." You miss the opportunity to model curiosity for the people around you.</p>
+
+                    <p>Learning out loud doesn't mean oversharing or performing vulnerability. It means making your learning process visible to at least one other person. It means saying "I'm figuring this out" instead of waiting until you've figured it out. It means sharing a messy moment, a genuine question, or a point of confusion—without cleaning it up first.</p>
+
+                    <p>This is uncomfortable. It should be. You're making yourself visible while uncertain. But that discomfort is where psychological safety is built—not by waiting for someone else to create it, but by practicing it yourself.</p>
+                    
+                    <div class="callout callout-goal">
+                        <strong>Your goal this week:</strong> Share one messy moment from your AI experiments (or any recent work) with one person. Don't clean it up. Don't apologize for it. Just share it and notice what happens.
+                    </div>
+                </section>
+
+                <!-- Step 2: Video -->
+                <section class="content-section" id="video">
+                    <div class="section-icon">🎬</div>
+                    <h2>This Week's Concept Drop</h2>
+                    
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <div class="video-icon">📹</div>
+                            <h3>"Learning Out Loud"</h3>
+                            <p>8-10 minute video introducing this week's core concept</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3: Experiment -->
+                <section class="content-section" id="experiment">
+                    <div class="section-icon">🤸</div>
+                    <h2>Your Weekly Experiment</h2>
+                    <p>This week, you're going to share something messy. Not a polished insight. Not a success story. A moment where you got stuck, tried something that didn't work, or felt genuinely confused.</p>
+                    
+                    <p>The goal isn't to get advice or solutions. The goal is to practice making your learning process visible to another human being.</p>
+
+                    <!-- Two-Track Layout -->
+                    <div class="tracks-container">
+                        <!-- IC Track -->
+                        <div class="track-card">
+                            <div class="track-header">
+                                <span class="track-icon">🧑‍💼</span>
+                                <h3>Individual Contributor Track</h3>
+                            </div>
+                            <div class="track-content">
+                                <h4>Step 1: Identify Your Messy Moment</h4>
+                                <p>Pick one specific moment from your AI experiments this week (or any recent work) where:</p>
+                                <ul>
+                                    <li>You got stuck</li>
+                                    <li>You tried something that didn't work</li>
+                                    <li>You're genuinely confused</li>
+                                    <li>You asked a bad question and got a weird answer</li>
+                                </ul>
+                                <p>Write it down in 2-3 sentences. Don't clean it up yet. Example:</p>
+                                <div class="template-box">
+                                    <p class="template-label">Example</p>
+                                    <div class="template-content">
+                                        <p>"I tried to get AI to help me draft a project proposal, but my prompt was so vague that it gave me generic garbage. I still don't know how to explain what I actually need."</p>
+                                    </div>
+                                </div>
+
+                                <h4>Step 2: Decide Who to Share With</h4>
+                                <p>Use the Decision Tree below to pick the right person.</p>
+
+                                <h4>Step 3: Share It (Without Cleaning It Up)</h4>
+                                <p>Send it in a message, bring it up in a conversation, or post it in a Slack channel. Use one of these frames:</p>
+                                <ul>
+                                    <li>"I'm trying to figure this out. Here's where I got stuck: [your messy moment]. Have you run into this?"</li>
+                                    <li>"I'm learning [AI/this new thing], and honestly, I'm confused about [specific thing]. Does this make sense to you?"</li>
+                                    <li>"I tried [thing] and it didn't work. Here's what happened: [describe]. What am I missing?"</li>
+                                </ul>
+                                <p><strong>The rule:</strong> No disclaimers. Don't say "I know I should have done this better" or "This is probably obvious but..." Just share the mess.</p>
+
+                                <h4>Step 4: Notice What Happens</h4>
+                                <ul>
+                                    <li>How did the other person respond?</li>
+                                    <li>What did it feel like to be visible while uncertain?</li>
+                                    <li>What did you learn (about them, about you, about the problem)?</li>
+                                </ul>
+                                
+                                <div class="callout callout-info">
+                                    <strong>If you're not ready to share with another person:</strong> Share with Eko. That still counts. You're practicing narrating confusion out loud.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leader Track -->
+                        <div class="track-card">
+                            <div class="track-header">
+                                <span class="track-icon">👔</span>
+                                <h3>Leader Track</h3>
+                            </div>
+                            <div class="track-content">
+                                <h4>Step 1: Identify Your Genuine Uncertainty</h4>
+                                <p>Pick one thing about AI (or any new tool/practice) that you actually don't know. Not something you're pretending not to know—something you're genuinely figuring out. Examples:</p>
+                                <ul>
+                                    <li>"I'm not sure how to tell when AI is giving me good advice vs. plausible-sounding nonsense."</li>
+                                    <li>"I've been trying to use AI for [task], and I can't figure out if it's saving me time or just adding steps."</li>
+                                    <li>"I don't know if we should be using AI for [team process] or if it's overkill."</li>
+                                </ul>
+                                <p>Write it down as a question (not a statement). Example:</p>
+                                <div class="template-box">
+                                    <p class="template-label">Example</p>
+                                    <div class="template-content">
+                                        <p>"How do you all know when AI is actually being useful vs. just sounding smart?"</p>
+                                    </div>
+                                </div>
+
+                                <h4>Step 2: Share It in a Team Context</h4>
+                                <p>Choose your venue:</p>
+                                <ul>
+                                    <li>In your next team meeting (5 minutes at the start or end)</li>
+                                    <li>In a 1:1 with someone you're mentoring</li>
+                                    <li>In a Slack post to your team channel</li>
+                                </ul>
+                                <p>Use this frame:</p>
+                                <div class="template-box">
+                                    <p class="template-label">Frame</p>
+                                    <div class="template-content">
+                                        <p>"I'm trying to figure out [thing], and honestly, I don't have the answer yet. Here's what I'm noticing: [describe your uncertainty]. What are you all seeing?"</p>
+                                    </div>
+                                </div>
+                                <p><strong>The rule:</strong> Don't perform uncertainty. Share actual uncertainty. If you already know the answer, pick a different question.</p>
+
+                                <h4>Step 3: Notice What Happens</h4>
+                                <ul>
+                                    <li>Did anyone else share their own uncertainty?</li>
+                                    <li>Did the conversation shift (from "leader has answers" to "we're figuring this out together")?</li>
+                                    <li>What did it feel like to not be the expert in the room?</li>
+                                </ul>
+                                
+                                <div class="callout callout-info">
+                                    <strong>If your team environment feels too risky:</strong> Start smaller. Share with one trusted team member in a 1:1. Or share with a peer leader outside your team. You're still practicing visible learning.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decision Tree & Troubleshooting -->
+                    <div style="margin-top: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">🌳 Who Should I Share With?</h3>
+                        
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>👥</span> Someone also learning about AI?
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    Start there. You're learning together. Low risk, high relevance.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🧐</span> Someone generally curious (not judgmental)?
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    That's your person. They don't need to know about AI—they just need to be curious.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🤝</span> Someone who's shared their own mistakes?
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    They've modeled vulnerability. They're safe.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🌐</span> A peer outside your immediate team?
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    Sometimes it's safer to share with someone who isn't evaluating your performance.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🤖</span> None of the above?
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    Start with Eko. Seriously. Practicing narrating confusion out loud (even to an AI) builds the muscle.
+                                </div>
+                            </details>
+                        </div>
+
+                        <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">🔧 What If They React Badly?</h3>
+                        
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🙄</span> They dismiss you or act like it's obvious
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    That's data about them, not about you. Some people aren't safe to learn out loud with. That's okay. Pick a different person next time.
+                                </div>
+                            </details>
+                            
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🔨</span> They try to immediately fix your problem
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    Redirect: "I appreciate that, but I'm not looking for a solution right now—I'm just trying to think through it out loud."
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>🦗</span> No one responds
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    That's also data. It might mean people didn't see it, don't know how to respond, or the environment isn't set up for visible learning yet. You still practiced. That's the muscle.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>😰</span> You feel exposed or regret sharing
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    Talk to Eko about it. That discomfort is real and worth processing. Ask yourself: "What was I afraid would happen? Did it happen?" Sometimes the anticipation is worse than the experience.
+                                </div>
+                            </details>
+
+                            <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                                <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                    <span>✨</span> Someone shares their own messy moment back
+                                </summary>
+                                <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                    This is the best-case scenario. You just created psychological safety. Notice what that feels like. This is how cultures shift—one visible learning moment at a time.
+                                </div>
+                            </details>
+                        </div>
+
+                        <div style="margin-top:16px; padding:14px; background:rgba(102,126,234,0.06); border-radius:8px;">
+                            <p style="font-size:13px; font-weight:600; color:var(--primary-purple); margin-bottom:8px;">⚡ Quick tips</p>
+                            <p style="font-size:12px; line-height:1.6; color:var(--text-body); margin:0;">Pick someone curious, not critical. No disclaimers. Don't clean it up. The rule: share the mess, not the lesson.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 4: Eko Reflection -->
+                <section class="content-section eko-section" id="eko">
+                    <div class="section-icon">🧠</div>
+                    <h2>Time to Reflect with Eko</h2>
+                    
+                    <div class="eko-container">
+                        <p class="eko-intro">After you complete your experiment, it's time to unpack what happened. This is where you process the discomfort and extract the learning.</p>
+                        
+                        <div class="eko-chat-embed">
+                            <div class="eko-chat-header">
+                                <div class="eko-avatar">🤖</div>
+                                <div>
+                                    <h4>Chat with Eko</h4>
+                                    <p>Your AI reflection coach</p>
+                                </div>
+                            </div>
+                            <div class="eko-chat-body">
+                                <div class="eko-chat-frame">
+                                    <iframe 
+                                        src="https://app.relevanceai.com/agents/f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/d709b02d-5126-4206-b80b-54ac6bc11888/embed-chat?hide_tool_steps=true&hide_file_uploads=true&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+                                        width="100%" 
+                                        height="500px" 
+                                        frameborder="0" 
+                                        allow="microphone"
+                                        style="border-radius: 8px; border: none;">
+                                    </iframe>
+                                </div>
+                                <div class="eko-starter-prompt">
+                                    <p><strong>💡 Pro tip:</strong> Start your reflection with this prompt:</p>
+                                    <p class="starter-text">"Eko, I just completed my Week 3 experiment for the AI Readiness sprint. I practiced learning out loud by sharing a messy moment with another person. Can you help me reflect on what I noticed?"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="eko-guide">
+                            <h4>Eko will guide you through a reflection on:</h4>
+                            <ul>
+                                <li>What it felt like to share something messy without cleaning it up</li>
+                                <li>How the other person responded (and what surprised you about that)</li>
+                                <li>What you learned about psychological safety in that relationship or environment</li>
+                                <li>Where else you could practice making your learning visible</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout callout-info">
+                            <strong>Important:</strong> Eko isn't here to tell you what to think. Eko is here to help you think. If a question doesn't land, say so. If you need to go deeper on something, ask.
+                        </div>
+
+                        <!-- Geek Corner -->
+                        <div style="margin-top: 40px; padding: 32px; background: var(--bg-light); border-radius: 14px; border: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                                <span style="font-size: 22px;">🤓</span>
+                                <div>
+                                    <div class="sidebar-label">Geek Corner</div>
+                                    <p style="font-size: 13px; color: var(--text-light); margin: 4px 0 0; font-style: italic;">Not required—for those who want to go deeper.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 4px;"><strong>📖 Reading</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">What Is Psychological Safety — McKinsey</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">Psychological safety isn't about being nice — it's about creating environments where people can take risks without fear of punishment. McKinsey breaks down why it's the single biggest predictor of high-performing teams, and what it actually looks like in practice.</p>
+                                <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-psychological-safety" target="_blank">Open resource →</a>
+                            </div>
+                            <div style="margin-bottom: 0;">
+                                <p style="margin-bottom: 4px;"><strong>🎙️ Podcast</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">Dare to Lead with Brené Brown</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Brené Brown's research on vulnerability and courage is the backbone of modern thinking on psychological safety. This podcast goes deep on what it takes to lead (and work) in environments where people can actually be honest with each other.</p>
+                                <div style="display: flex; gap: 12px; align-items: center;">
+                                    <a href="https://open.spotify.com/show/4P86ZzHf7EOlRG7do9fS7D" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #1DB954; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                                        Spotify
+                                    </a>
+                                    <a href="https://podcasts.apple.com/us/podcast/dare-to-lead-with-bren%C3%A9-brown/id1522241349" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #D56DFB; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3.6c4.636 0 8.4 3.764 8.4 8.4 0 4.636-3.764 8.4-8.4 8.4-4.636 0-8.4-3.764-8.4-8.4 0-4.636 3.764-8.4 8.4-8.4zm0 2.4a6.003 6.003 0 00-5.876 7.17.72.72 0 101.413-.284A4.563 4.563 0 0112 7.44a4.563 4.563 0 014.463 5.446.72.72 0 101.413.284A6.003 6.003 0 0012 6zm0 3.12a2.88 2.88 0 00-1.32 5.442l-.588 3.47a.96.96 0 00.946 1.128h1.924a.96.96 0 00.946-1.128l-.588-3.47A2.88 2.88 0 0012 9.12z"/></svg>
+                                        Apple Podcasts
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Navigation -->
+                <section class="week-navigation">
+                    <a href="week2.html" class="nav-btn nav-back">← Back to Week 2</a>
+                    <a href="week4.html" class="nav-btn nav-next">Next: Week 4 →</a>
+                </section>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Readiness Sprint</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // ===== STEP NAV FUNCTIONALITY =====
+        function scrollToSection(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                var offset = 110;
+                var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        }
+
+        function updateStepNav() {
+            var sections = ['welcome', 'video', 'experiment', 'eko'];
+            var tabs = document.querySelectorAll('.step-tab');
+            var current = '';
+
+            for (var i = 0; i < sections.length; i++) {
+                var section = document.getElementById(sections[i]);
+                if (section) {
+                    var rect = section.getBoundingClientRect();
+                    if (rect.top <= 160 && rect.bottom >= 160) {
+                        current = sections[i];
+                    }
+                }
+            }
+
+            for (var j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove('active');
+                if (tabs[j].getAttribute('data-target') === current) {
+                    tabs[j].classList.add('active');
+                }
+            }
+        }
+
+        var scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateStepNav, 30);
+        });
+    </script>
+
+    <!-- Eko Chat Bubble -->
+    <script defer data-relevanceai-share-id="f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/42eaa7d7-fe19-4d99-9d92-1f9e376e3f88" src="https://app.relevanceai.com/embed/chat-bubble.js" data-share-styles="hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false"></script>
+</body>
+</html>

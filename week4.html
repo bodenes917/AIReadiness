@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4: Integration & Consolidation | AI Readiness Sprint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="week-styles.css">
+    <style>
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    </style>
+</head>
+<body data-week="4" data-week-title="Integration & Consolidation">
+    
+    <!-- Top Navigation -->
+    <nav class="week-nav">
+        <div class="container">
+            <a href="index.html" class="nav-back">← Sprint Home</a>
+            <div class="week-indicator">Week 4 of 5</div>
+        </div>
+    </nav>
+
+    <!-- Step Navigation Tabs -->
+    <div class="step-nav" id="stepNav">
+        <div class="step-nav-inner">
+            <a class="step-tab active" data-target="welcome" onclick="scrollToSection('welcome')">
+                <span class="step-num">1</span> Welcome
+            </a>
+            <a class="step-tab" data-target="experiment" onclick="scrollToSection('experiment')">
+                <span class="step-num">2</span> Retrospective
+            </a>
+            <a class="step-tab" data-target="plusone" onclick="scrollToSection('plusone')">
+                <span class="step-num">3</span> Plus-One
+            </a>
+            <a class="step-tab" data-target="eko" onclick="scrollToSection('eko')">
+                <span class="step-num">4</span> Reflect
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until password entered) -->
+    <div class="week-content" style="display: none;">
+        
+        <!-- Compact Hero -->
+        <div class="week-hero">
+            <div class="container">
+                <div class="week-badge">Week 4</div>
+                <h1 class="week-hero-title">Integration & Consolidation</h1>
+                <p class="week-hero-subtitle">The Personal Retrospective</p>
+                <div class="capability-badge">Core Capability: Deliberate Practice</div>
+            </div>
+        </div>
+
+        <!-- SINGLE-COLUMN LAYOUT -->
+        <div class="week-layout" style="grid-template-columns: 1fr;">
+            <div class="main-content">
+
+                <!-- Step 1: Welcome -->
+                <section class="content-section" id="welcome">
+                    <div class="section-icon">&#x1F44B;</div>
+                    <h2>Welcome & Integration Week</h2>
+                    <p>Welcome to Week 4. This is Integration Week—which means there's no new content, no new concept to absorb, no new video to watch. This week is about consolidation.</p>
+                    
+                    <p>You've spent three weeks building new muscle: the learner's posture, iteration, learning out loud. You've done experiments. You've reflected with Eko. You've felt the discomfort of doing something different. Now it's time to step back and ask: what's actually sticking? What shifted? And what do you want to deepen?</p>
+
+                    <p>This isn't a victory lap. It's not a rest week. It's a different kind of work—the work of integration. You're going to review your experiments from Weeks 1-3, identify which practice had the most impact, and design a "plus-one" version to try this week. Not a completely new experiment. The same practice, just one degree harder.</p>
+
+                    <p>Why? Because learning doesn't happen in a single exposure. It happens through repetition with variation. You practiced the learner's posture once in Week 1. That planted the seed. This week, you're watering it.</p>
+                    
+                    <div class="callout callout-goal">
+                        <strong>Your goal this week:</strong> Reflect on Weeks 1-3, identify your highest-impact practice, and design a plus-one experiment that deepens that muscle.
+                    </div>
+                </section>
+
+                <!-- Step 2: Retrospective -->
+                <section class="content-section" id="experiment">
+                    <div class="section-icon">&#x1F9E0;</div>
+                    <h2>Part 1: The Retrospective with Eko</h2>
+                    
+                    <div class="eko-container">
+                        <p class="eko-intro">Start your integration week by reviewing Weeks 1-3 with Eko. This conversation will help you identify which practice had the most impact.</p>
+                        
+                        <div class="eko-chat-embed">
+                            <div class="eko-chat-header">
+                                <div class="eko-avatar">&#x1F916;</div>
+                                <div>
+                                    <h4>Chat with Eko</h4>
+                                    <p>Your AI reflection coach</p>
+                                </div>
+                            </div>
+                            <div class="eko-chat-body">
+                                <div class="eko-chat-frame">
+                                    <iframe 
+                                        src="https://app.relevanceai.com/agents/f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/d709b02d-5126-4206-b80b-54ac6bc11888/embed-chat?hide_tool_steps=true&hide_file_uploads=true&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+                                        width="100%" 
+                                        height="500px" 
+                                        frameborder="0" 
+                                        allow="microphone"
+                                        style="border-radius: 8px; border: none;">
+                                    </iframe>
+                                </div>
+                                <div class="eko-starter-prompt">
+                                    <p><strong>&#x1F4A1; Pro tip:</strong> Start your retrospective with this prompt:</p>
+                                    <p class="starter-text">"Eko, I'm in Week 4 of the AI Readiness sprint—Integration Week. I want to review my experiments from Weeks 1-3 and identify which practice had the most impact. Can you help me think through this and design my plus-one experiment?"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="eko-guide">
+                            <h4>Eko will guide you through a structured reflection:</h4>
+                            <ul>
+                                <li><strong>Week 1 (Learner's Posture):</strong> Did I actually approach AI with curiosity, or did I just go through the motions?</li>
+                                <li><strong>Week 2 (Iteration):</strong> Did I feel the difference between "trying to nail it" and "treating everything as a draft"?</li>
+                                <li><strong>Week 3 (Learning Out Loud):</strong> What did it feel like to share something messy?</li>
+                                <li><strong>Then identify:</strong> Which experiment am I still thinking about? Which one shifted something?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3: Plus-One -->
+                <section class="content-section" id="plusone">
+                    <div class="section-icon">&#x2795;</div>
+                    <h2>Part 2: Your Plus-One Experiment</h2>
+                    <p>A "plus-one" experiment is the same practice, but one degree harder. Here's what that might look like:</p>
+
+                    <div style="display:flex; flex-direction:column; gap:8px; margin-top: 20px;">
+                        <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                            <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                &#x1F9E0; If Week 1 Resonated (Learner's Posture)
+                            </summary>
+                            <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                <p><strong>Original:</strong> You asked AI to challenge your thinking on a familiar topic.</p>
+                                <p><strong>Plus-One Options:</strong></p>
+                                <ul>
+                                    <li>Ask AI to challenge your thinking in a higher-stakes area (a decision you're about to make)</li>
+                                    <li>Have a live conversation with a colleague where you adopt the learner's posture</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                            <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                &#x1F501; If Week 2 Resonated (Iteration)
+                            </summary>
+                            <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                <p><strong>Original:</strong> You iterated on a small task (an email, a summary).</p>
+                                <p><strong>Plus-One Options:</strong></p>
+                                <ul>
+                                    <li>Apply iteration to a bigger, more complex project (a proposal, a strategy doc)</li>
+                                    <li>Do 5 rounds of iteration instead of 3. See how far you can push it.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                            <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                &#x1F4E2; If Week 3 Resonated (Learning Out Loud)
+                            </summary>
+                            <div style="padding:12px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                <p><strong>Original:</strong> You shared a messy moment with one person.</p>
+                                <p><strong>Plus-One Options:</strong></p>
+                                <ul>
+                                    <li>Share with a larger group (your team, a Slack channel)</li>
+                                    <li>Share with someone more senior or in a more visible context</li>
+                                    <li>If you shared with Eko last time, share with an actual human this time</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="callout callout-info" style="margin-top: 32px;">
+                        <strong>The rule:</strong> It should feel like a stretch, but not overwhelming. If it feels easy, go one degree harder. If it feels terrifying, scale it back.
+                    </div>
+
+                    <!-- Deepen Your Practice Guide -->
+                    <div style="margin-top: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">&#x1F4DD; Deepen Your Practice Guide</h3>
+                        
+                        <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                            <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                &#x1F4CB; Full Worksheet Structure
+                            </summary>
+                            <div style="padding:16px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                <h4>PART 1: RETROSPECTIVE (Review Weeks 1-3)</h4>
+                                <p>For each week, answer:</p>
+                                <ul>
+                                    <li>What was my experiment?</li>
+                                    <li>What do I remember feeling during or after?</li>
+                                    <li>What surprised me?</li>
+                                    <li>What shifted (even slightly)?</li>
+                                </ul>
+                                <p><strong>Circle the week that had the most impact.</strong> (Not the one you did best—the one that shifted something.)</p>
+
+                                <h4>PART 2: DESIGN YOUR PLUS-ONE</h4>
+                                <ul>
+                                    <li>The practice I'm deepening: [Week 1, 2, or 3?]</li>
+                                    <li>What I did originally: [Describe in one sentence]</li>
+                                    <li>My plus-one experiment (one degree harder): [Describe specifically]</li>
+                                    <li>When I'll do it: [Day and time—be specific]</li>
+                                    <li>What I'm nervous about: [Be honest]</li>
+                                </ul>
+
+                                <h4>PART 3: PLUS-ONE REFLECTION (Complete After)</h4>
+                                <ul>
+                                    <li>What I did: [Describe what actually happened]</li>
+                                    <li>What was different from the original experiment:</li>
+                                    <li>What surprised me:</li>
+                                    <li>What I learned about myself:</li>
+                                    <li>What I want to keep practicing:</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Step 4: Eko Reflection -->
+                <section class="content-section eko-section" id="eko">
+                    <div class="section-icon">&#x1F9E0;</div>
+                    <h2>Part 3: The Plus-One Reflection with Eko</h2>
+                    
+                    <div class="eko-container">
+                        <p class="eko-intro">After you complete your plus-one experiment, return to Eko to unpack what deepened.</p>
+                        
+                        <div class="eko-chat-embed">
+                            <div class="eko-chat-header">
+                                <div class="eko-avatar">&#x1F916;</div>
+                                <div>
+                                    <h4>Chat with Eko</h4>
+                                    <p>Your AI reflection coach</p>
+                                </div>
+                            </div>
+                            <div class="eko-chat-body">
+                                <div class="eko-chat-frame">
+                                    <iframe 
+                                        src="https://app.relevanceai.com/agents/f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/d709b02d-5126-4206-b80b-54ac6bc11888/embed-chat?hide_tool_steps=true&hide_file_uploads=true&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+                                        width="100%" 
+                                        height="500px" 
+                                        frameborder="0" 
+                                        allow="microphone"
+                                        style="border-radius: 8px; border: none;">
+                                    </iframe>
+                                </div>
+                                <div class="eko-starter-prompt">
+                                    <p><strong>&#x1F4A1; Pro tip:</strong> Start your plus-one reflection with this prompt:</p>
+                                    <p class="starter-text">"Eko, I just completed my plus-one experiment for Week 4 of the AI Readiness sprint. I want to reflect on what deepened and what I'm noticing now. Can you help me unpack this?"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="eko-guide">
+                            <h4>Eko will guide you through:</h4>
+                            <ul>
+                                <li>What was different about this version compared to the original?</li>
+                                <li>What did you notice that you didn't notice the first time?</li>
+                                <li>What's shifting in how you approach learning, uncertainty, or AI?</li>
+                                <li>What do you want to keep practicing beyond this sprint?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout callout-info">
+                            <strong>Important:</strong> Eko isn't here to tell you what to think. Eko is here to help you think. If a question doesn't land, say so. If you need to go deeper on something, ask.
+                        </div>
+
+                        <!-- Geek Corner -->
+                        <div style="margin-top: 40px; padding: 32px; background: var(--bg-light); border-radius: 14px; border: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                                <span style="font-size: 22px;">&#x1F913;</span>
+                                <div>
+                                    <div class="sidebar-label">Geek Corner</div>
+                                    <p style="font-size: 13px; color: var(--text-light); margin: 4px 0 0; font-style: italic;">Not required—for those who want to go deeper.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 4px;"><strong>📖 Reading</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">Reflecting on Work Improves Job Performance — Harvard Business School</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">This Harvard research proves what most of us skip: taking time to reflect on what you've done actually makes you better at doing it. Not more experience — more reflection. It's a short read that might change how you end your workday.</p>
+                                <a href="https://www.library.hbs.edu/working-knowledge/reflecting-on-work-improves-job-performance" target="_blank">Open resource →</a>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 4px;"><strong>🎬 Video</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">The Power of Reflection</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">A clear, practical look at why reflection is the most underused learning tool — and how to actually build it into your routine without it feeling like homework.</p>
+                                <a href="https://www.youtube.com/watch?v=IRDhHb987Wc" target="_blank">▶️ Watch on YouTube →</a>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 4px;"><strong>🎬 Video</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">Simon Sinek — Reflection & Growth</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">Sinek connects reflection to long-term growth in a way that hits different when you're mid-sprint. If you're the type who's always pushing forward, this is a good reminder to occasionally look back.</p>
+                                <a href="https://www.youtube.com/watch?v=_Ky-mKuhKgU" target="_blank">▶️ Watch on YouTube →</a>
+                            </div>
+                            <div style="margin-bottom: 0;">
+                                <p style="margin-bottom: 4px;"><strong>🎙️ Podcast</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">The Knowledge Project</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Shane Parrish interviews people who think for a living — and asks them how they actually think. It's the perfect companion for a week focused on building your own reflection practice. Pick any episode that catches your eye.</p>
+                                <div style="display: flex; gap: 12px; align-items: center;">
+                                    <a href="https://open.spotify.com/show/1G9ZyZsZ4XWw2O3S0rY0fM" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #1DB954; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                                        Spotify
+                                    </a>
+                                    <a href="https://podcasts.apple.com/us/podcast/the-knowledge-project-with-shane-parrish/id1054091490" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #D56DFB; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3.6c4.636 0 8.4 3.764 8.4 8.4 0 4.636-3.764 8.4-8.4 8.4-4.636 0-8.4-3.764-8.4-8.4 0-4.636 3.764-8.4 8.4-8.4zm0 2.4a6.003 6.003 0 00-5.876 7.17.72.72 0 101.413-.284A4.563 4.563 0 0112 7.44a4.563 4.563 0 014.463 5.446.72.72 0 101.413.284A6.003 6.003 0 0012 6zm0 3.12a2.88 2.88 0 00-1.32 5.442l-.588 3.47a.96.96 0 00.946 1.128h1.924a.96.96 0 00.946-1.128l-.588-3.47A2.88 2.88 0 0012 9.12z"/></svg>
+                                        Apple Podcasts
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Navigation -->
+                <section class="week-navigation">
+                    <a href="week3.html" class="nav-btn nav-back">← Back to Week 3</a>
+                    <a href="week5.html" class="nav-btn nav-next">Next: Week 5 →</a>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Readiness Sprint</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function scrollToSection(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                var offset = 110;
+                var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        }
+
+        function updateStepNav() {
+            var sections = ['welcome', 'experiment', 'plusone', 'eko'];
+            var tabs = document.querySelectorAll('.step-tab');
+            var current = '';
+
+            for (var i = 0; i < sections.length; i++) {
+                var section = document.getElementById(sections[i]);
+                if (section) {
+                    var rect = section.getBoundingClientRect();
+                    if (rect.top <= 160 && rect.bottom >= 160) {
+                        current = sections[i];
+                    }
+                }
+            }
+
+            for (var j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove('active');
+                if (tabs[j].getAttribute('data-target') === current) {
+                    tabs[j].classList.add('active');
+                }
+            }
+        }
+
+        var scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateStepNav, 30);
+        });
+    </script>
+
+    <!-- Eko Chat Bubble -->
+    <script defer data-relevanceai-share-id="f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/42eaa7d7-fe19-4d99-9d92-1f9e376e3f88" src="https://app.relevanceai.com/embed/chat-bubble.js" data-share-styles="hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5: Your New Operating System | AI Readiness Sprint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="week-styles.css">
+    <style>
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    </style>
+</head>
+<body data-week="5" data-week-title="Your New Operating System">
+    
+    <!-- Top Navigation -->
+    <nav class="week-nav">
+        <div class="container">
+            <a href="index.html" class="nav-back">← Sprint Home</a>
+            <div class="week-indicator">Week 5 of 5</div>
+        </div>
+    </nav>
+
+    <!-- Step Navigation Tabs -->
+    <div class="step-nav" id="stepNav">
+        <div class="step-nav-inner">
+            <a class="step-tab active" data-target="welcome" onclick="scrollToSection('welcome')">
+                <span class="step-num">1</span> Welcome
+            </a>
+            <a class="step-tab" data-target="video" onclick="scrollToSection('video')">
+                <span class="step-num">2</span> Watch
+            </a>
+            <a class="step-tab" data-target="experiment" onclick="scrollToSection('experiment')">
+                <span class="step-num">3</span> Experiment
+            </a>
+            <a class="step-tab" data-target="eko" onclick="scrollToSection('eko')">
+                <span class="step-num">4</span> Reflect
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until password entered) -->
+    <div class="week-content" style="display: none;">
+        
+        <!-- Compact Hero -->
+        <div class="week-hero">
+            <div class="container">
+                <div class="week-badge">Week 5 - Final Week</div>
+                <h1 class="week-hero-title">Your New Operating System</h1>
+                <p class="week-hero-subtitle">Building Your New Workflow</p>
+                <div class="capability-badge">Core Capability: Systems Thinking</div>
+            </div>
+        </div>
+
+        <!-- SINGLE-COLUMN LAYOUT -->
+        <div class="week-layout" style="grid-template-columns: 1fr;">
+            <div class="main-content">
+
+                <!-- Step 1: Welcome & Goal -->
+                <section class="content-section" id="welcome">
+                    <div class="section-icon">👋</div>
+                    <h2>Welcome & Weekly Goal</h2>
+                    <p>Welcome to Week 5—the final week of your AI Readiness sprint. You've practiced the learner's posture. You've practiced iteration. You've practiced learning out loud. You've deepened one of those practices through your plus-one experiment. Now it's time to embed what you've learned into how you actually work.</p>
+                    
+                    <p>This week isn't about learning a new concept. It's about application. You're going to take a real workflow—something you do regularly—and redesign it with AI as a component. Not AI replacing you. AI creating leverage so you can focus on the work that requires your judgment, creativity, and relationships.</p>
+
+                    <p>Up until now, you've been experimenting with AI as a tool you use occasionally. This week, you're going to practice thinking of AI as part of your operating system—embedded into how you work, not bolted on as an afterthought.</p>
+
+                    <p>This requires a different kind of thinking. You're not asking "What can AI do for me?" You're asking "Where in my workflow could AI create leverage?" Leverage means: where could AI handle the repetitive cognitive work so you can focus on the high-value work? Where could AI make you faster, sharper, or more creative without replacing your judgment?</p>
+
+                    <p>This is systems thinking. You're stepping back from the day-to-day tasks and looking at the workflow as a whole. You're identifying the bottlenecks, the friction points, the places where you're spending cognitive energy on work that doesn't require your expertise. And then you're redesigning the system with AI embedded at one leverage point.</p>
+                    
+                    <div class="callout callout-goal">
+                        <strong>Your goal this week:</strong> Map a small, repeatable workflow, identify one place where AI could create leverage, redesign the workflow with AI embedded, and test it. Notice what changes.
+                    </div>
+                </section>
+
+                <!-- Step 2: Video -->
+                <section class="content-section" id="video">
+                    <div class="section-icon">🎬</div>
+                    <h2>This Week's Concept Drop</h2>
+                    
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <div class="video-icon">📹</div>
+                            <h3>"Your New Operating System"</h3>
+                            <p>8-10 minute video introducing this week's core concept</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3: Experiment -->
+                <section class="content-section" id="experiment">
+                    <div class="section-icon">🤸</div>
+                    <h2>Your Weekly Experiment</h2>
+                    <p>This week, you're going to redesign a workflow. Not your entire job—one small, repeatable workflow that you do at least once a week and that takes 30-60 minutes.</p>
+                    
+                    <p>You'll map the current workflow, identify where AI could create leverage, redesign it with AI embedded, and test the new version.</p>
+
+                    <!-- Two-Track Layout -->
+                    <div class="tracks-container">
+                        <!-- IC Track -->
+                        <div class="track-card">
+                            <div class="track-header">
+                                <span class="track-icon">🧑‍💼</span>
+                                <h3>Individual Contributor Track</h3>
+                            </div>
+                            <div class="track-content">
+                                <h4>Step 1: Pick a Small, Repeatable Workflow (5 Minutes)</h4>
+                                <p>Choose one workflow you repeat at least once a week that takes 30-60 minutes. Don't pick something huge.</p>
+                                <p><strong>Good examples:</strong></p>
+                                <ul>
+                                    <li>How I prepare for 1:1 meetings</li>
+                                    <li>How I draft weekly status updates</li>
+                                    <li>How I research a topic before a presentation</li>
+                                    <li>How I prioritize my tasks for the week</li>
+                                    <li>How I review and respond to feedback</li>
+                                </ul>
+                                <p><strong>Bad examples (too big):</strong></p>
+                                <ul>
+                                    <li>How I manage my entire week</li>
+                                    <li>How I run projects</li>
+                                    <li>How I make strategic decisions</li>
+                                </ul>
+                                <div class="callout callout-info">
+                                    <strong>Test:</strong> Can you describe the workflow in 5-7 steps? If yes, it's the right size. If no, it's too big.
+                                </div>
+
+                                <h4>Step 2: Map Your Current Workflow (10-15 Minutes)</h4>
+                                <p>Write down the steps you currently follow. Be specific. Use this structure:</p>
+                                <ul>
+                                    <li><strong>Input:</strong> What triggers this workflow?</li>
+                                    <li><strong>Steps:</strong> What do you do, in order? (List 5-7 steps)</li>
+                                    <li><strong>Output:</strong> What's the result?</li>
+                                    <li><strong>Pain Points:</strong> Where do you get stuck? Where do you spend the most time?</li>
+                                </ul>
+
+                                <div class="template-box" style="margin: 20px 0;">
+                                    <p class="template-label">Example: Preparing for 1:1s</p>
+                                    <div class="template-content">
+                                        <p><strong>Input:</strong> 1:1 meeting scheduled for tomorrow</p>
+                                        <p><strong>Steps:</strong></p>
+                                        <ol style="margin-left: 20px;">
+                                            <li>Look at notes from last meeting</li>
+                                            <li>Check project status in [tool]</li>
+                                            <li>Think about what I want to discuss</li>
+                                            <li>Write down 3-4 topics</li>
+                                            <li>Sometimes forget to do this until 10 minutes before the meeting</li>
+                                        </ol>
+                                        <p><strong>Output:</strong> A short list of topics (sometimes rushed)</p>
+                                        <p><strong>Pain Points:</strong> I often forget to do this until the last minute. I spend time searching for context.</p>
+                                    </div>
+                                </div>
+
+                                <h4>Step 3: Ask Yourself—Where Could AI Create Leverage? (10 Minutes)</h4>
+                                <p><strong>Don't ask:</strong> "What could AI do instead of me?"</p>
+                                <p><strong>Ask:</strong> "Where could AI make me faster, sharper, or more creative?"</p>
+                                <p>Look for these opportunities:</p>
+                                <ul>
+                                    <li><strong>Repetitive cognitive work:</strong> Is there a step you do the same way every time?</li>
+                                    <li><strong>Synthesis or summarization:</strong> Is there a step where you're pulling together information?</li>
+                                    <li><strong>Ideation or brainstorming:</strong> Is there a step where you're generating options?</li>
+                                    <li><strong>Pattern recognition:</strong> Is there a step where you're looking for trends?</li>
+                                </ul>
+                                <p><strong>Pick ONE step where AI could fit.</strong> Don't try to embed AI everywhere. Just one leverage point.</p>
+
+                                <h4>Step 4: Redesign the Workflow with AI Embedded (10 Minutes)</h4>
+                                <p>Rewrite your workflow with AI as a component in one step.</p>
+                                
+                                <div class="template-box" style="margin: 20px 0;">
+                                    <p class="template-label">Example: Redesigned 1:1 Prep</p>
+                                    <div class="template-content">
+                                        <ol style="margin-left: 20px;">
+                                            <li><strong>[NEW]</strong> Ask AI to summarize notes from last 3 meetings and surface recurring themes</li>
+                                            <li>Check project status in [tool]</li>
+                                            <li><strong>[NEW]</strong> Ask AI to generate 5 questions I might want to explore based on recent work</li>
+                                            <li>Review AI's output and pick 3-4 topics</li>
+                                            <li>Show up prepared</li>
+                                        </ol>
+                                        <p><strong>The difference:</strong> AI is doing the repetitive cognitive work (summarizing, pattern-finding, question-generating). I'm doing the judgment work (deciding what matters, choosing what to focus on).</p>
+                                    </div>
+                                </div>
+
+                                <h4>Step 5: Test It (This Week)</h4>
+                                <p>Actually try the redesigned workflow at least once. Notice:</p>
+                                <ul>
+                                    <li>What worked?</li>
+                                    <li>What didn't work?</li>
+                                    <li>What would you change next time?</li>
+                                </ul>
+                                <div class="callout callout-warning">
+                                    Don't expect perfection. You're testing a prototype, not a final system.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leader Track -->
+                        <div class="track-card">
+                            <div class="track-header">
+                                <span class="track-icon">👔</span>
+                                <h3>Leader Track</h3>
+                            </div>
+                            <div class="track-content">
+                                <h4>Step 1: Pick a Team Workflow That Feels Inefficient (5 Minutes)</h4>
+                                <p>Choose one team workflow that:</p>
+                                <ul>
+                                    <li>Happens regularly (weekly or monthly)</li>
+                                    <li>Involves multiple people</li>
+                                    <li>Takes 30-90 minutes</li>
+                                    <li>Feels like it could be better</li>
+                                </ul>
+                                <p><strong>Good examples:</strong></p>
+                                <ul>
+                                    <li>How we run retrospectives</li>
+                                    <li>How we collect and synthesize feedback</li>
+                                    <li>How we generate ideas for [thing]</li>
+                                    <li>How we prepare for key meetings</li>
+                                </ul>
+                                <p><strong>Bad examples (too big or too vague):</strong></p>
+                                <ul>
+                                    <li>How we communicate (too broad)</li>
+                                    <li>How we run projects (too big)</li>
+                                    <li>How we work together (too abstract)</li>
+                                </ul>
+
+                                <h4>Step 2: Map the Current Workflow WITH Your Team (30-45 Minutes)</h4>
+                                <p>You'll need to facilitate this. Use this structure:</p>
+                                <p><strong>Agenda:</strong></p>
+                                <ol>
+                                    <li><strong>Frame the session (5 min):</strong> "We're going to map how we currently do [workflow], identify where it's breaking down, and explore where AI might help."</li>
+                                    <li><strong>Map the current workflow (15 min):</strong> As a group, identify Input, Steps, Output, and Pain Points</li>
+                                    <li><strong>Identify one leverage point (10 min):</strong> "If we could make ONE step 10x faster, which would have the most impact?"</li>
+                                    <li><strong>Brainstorm where AI could fit (10 min):</strong> "What could AI do at that step?"</li>
+                                    <li><strong>Redesign together (10 min):</strong> Rewrite the workflow with AI embedded</li>
+                                </ol>
+
+                                <h4>Step 3: Test the Redesigned Workflow</h4>
+                                <p>Actually try the new version once. Debrief as a team:</p>
+                                <ul>
+                                    <li>What worked?</li>
+                                    <li>What didn't?</li>
+                                    <li>What would we change?</li>
+                                </ul>
+                                <div class="callout callout-info">
+                                    This is a prototype, not a policy. You're testing, not committing.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facilitation Guide -->
+                    <div style="margin-top: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">👥 Facilitation Guide for Leaders</h3>
+                        
+                        <details style="border:1px solid var(--border-light); border-radius:8px; overflow:hidden;">
+                            <summary style="padding:12px 14px; cursor:pointer; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; list-style:none;">
+                                📋 How to Run a Workflow Mapping Session (Step-by-Step)
+                            </summary>
+                            <div style="padding:16px 14px; font-size:13px; border-top:1px solid var(--border-light); line-height:1.6;">
+                                <h4>Before the Meeting:</h4>
+                                <ul>
+                                    <li>Block 45-60 minutes</li>
+                                    <li>Let the team know the goal: "We're going to map one of our workflows and explore where AI might help us work better."</li>
+                                    <li>Prepare a shared doc or whiteboard</li>
+                                </ul>
+
+                                <h4>During the Meeting:</h4>
+                                
+                                <p><strong>1. Frame the Session (5 minutes)</strong></p>
+                                <p>Say this: "We're going to spend the next 45 minutes mapping how we currently do [workflow]. The goal isn't to criticize how we work—it's to get clear on the process, identify where it's breaking down, and explore where AI might create leverage."</p>
+                                <p>Set one ground rule: "There are no bad ideas in this session. We're exploring, not committing."</p>
+
+                                <p><strong>2. Map the Current Workflow (15 minutes)</strong></p>
+                                <p>Ask the team: "What triggers this workflow? What happens next? Walk me through the steps." Write them on the whiteboard. Listen for where people say "This takes forever."</p>
+
+                                <p><strong>3. Identify One Leverage Point (10 minutes)</strong></p>
+                                <p>Ask: "If we could make ONE step in this process 10x faster or easier, which step would have the biggest impact?" Let people vote or discuss.</p>
+
+                                <p><strong>4. Brainstorm Where AI Could Fit (10 minutes)</strong></p>
+                                <p>Ask: "At this step, what could AI do that would help us? Not replace us—help us."</p>
+
+                                <p><strong>5. Redesign Together (10 minutes)</strong></p>
+                                <p>Rewrite the steps on the whiteboard with AI embedded at the leverage point.</p>
+
+                                <p><strong>6. Close and Commit (5 minutes)</strong></p>
+                                <p>Say: "This is a prototype, not a policy. Let's try this new version once and see what happens."</p>
+                            </div>
+                        </details>
+
+                        <div style="margin-top:16px; padding:14px; background:rgba(102,126,234,0.06); border-radius:8px;">
+                            <p style="font-size:13px; font-weight:600; color:var(--primary-purple); margin-bottom:8px;">⚡ Quick tips</p>
+                            <p style="font-size:12px; line-height:1.6; color:var(--text-body); margin:0;">Pick ONE leverage point. Don't try to embed AI everywhere. Ask "Where could AI make us faster?" not "What could AI replace?" Test once, then iterate.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 4: Eko Reflection -->
+                <section class="content-section eko-section" id="eko">
+                    <div class="section-icon">🧠</div>
+                    <h2>Time to Reflect with Eko</h2>
+                    
+                    <div class="eko-container">
+                        <p class="eko-intro">After you complete your experiment, it's time to process what you learned about workflow redesign and where AI fits in your operating system.</p>
+                        
+                        <div class="eko-chat-embed">
+                            <div class="eko-chat-header">
+                                <div class="eko-avatar">🤖</div>
+                                <div>
+                                    <h4>Chat with Eko</h4>
+                                    <p>Your AI reflection coach</p>
+                                </div>
+                            </div>
+                            <div class="eko-chat-body">
+                                <div class="eko-chat-frame">
+                                    <iframe 
+                                        src="https://app.relevanceai.com/agents/f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/d709b02d-5126-4206-b80b-54ac6bc11888/embed-chat?hide_tool_steps=true&hide_file_uploads=true&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+                                        width="100%" 
+                                        height="500px" 
+                                        frameborder="0" 
+                                        allow="microphone"
+                                        style="border-radius: 8px; border: none;">
+                                    </iframe>
+                                </div>
+                                <div class="eko-starter-prompt">
+                                    <p><strong>💡 Pro tip:</strong> Start your reflection with this prompt:</p>
+                                    <p class="starter-text">"Eko, I just completed my Week 5 experiment for the AI Readiness sprint. I redesigned a workflow with AI embedded and tested it. Can you help me reflect on what I learned?"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="eko-guide">
+                            <h4>Eko will guide you through a reflection on:</h4>
+                            <ul>
+                                <li>What changed when you embedded AI into your workflow</li>
+                                <li>Where AI created leverage (and where it didn't)</li>
+                                <li>What you learned about the difference between "using AI as a tool" and "embedding AI into your operating system"</li>
+                                <li>What other workflows you could redesign using this approach</li>
+                            </ul>
+                            <p style="margin-top: 20px; font-style: italic;">Remember: This isn't about whether the redesigned workflow was perfect. It's about what you learned through the process of systems thinking.</p>
+                        </div>
+                        
+                        <div class="callout callout-info">
+                            <strong>Important:</strong> Eko isn't here to tell you what to think. Eko is here to help you think. If a question doesn't land, say so. If you need to go deeper on something, ask.
+                        </div>
+
+                        <!-- Geek Corner -->
+                        <div style="margin-top: 40px; padding: 32px; background: var(--bg-light); border-radius: 14px; border: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                                <span style="font-size: 22px;">🤓</span>
+                                <div>
+                                    <div class="sidebar-label">Geek Corner</div>
+                                    <p style="font-size: 13px; color: var(--text-light); margin: 4px 0 0; font-style: italic;">Not required—for those who want to go deeper.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 4px;"><strong>📖 Reading</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">How to Build a Learning Mindset at Work — Harvard Business Review</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">You've spent five weeks building new muscles — this HBR piece will help you keep them. It covers the practical habits that turn a temporary sprint into a permanent shift in how you approach your work and growth.</p>
+                                <a href="https://hbr.org/2022/04/how-to-build-a-learning-mindset-at-work" target="_blank">Open resource →</a>
+                            </div>
+                            <div style="margin-bottom: 0;">
+                                <p style="margin-bottom: 4px;"><strong>🎙️ Podcast</strong></p>
+                                <p style="font-weight: 600; margin-bottom: 4px;">WorkLife with Adam Grant</p>
+                                <p style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Adam Grant's other podcast — this one focused specifically on making work not suck. It's packed with research-backed ideas on rethinking how teams operate, how we collaborate, and how to stay curious when the default is autopilot. Great post-sprint listening.</p>
+                                <div style="display: flex; gap: 12px; align-items: center;">
+                                    <a href="https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #1DB954; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                                        Spotify
+                                    </a>
+                                    <a href="https://podcasts.apple.com/us/podcast/worklife-with-adam-grant/id1346314086" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: #D56DFB; color: white; font-size: 13px; font-weight: 600;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3.6c4.636 0 8.4 3.764 8.4 8.4 0 4.636-3.764 8.4-8.4 8.4-4.636 0-8.4-3.764-8.4-8.4 0-4.636 3.764-8.4 8.4-8.4zm0 2.4a6.003 6.003 0 00-5.876 7.17.72.72 0 101.413-.284A4.563 4.563 0 0112 7.44a4.563 4.563 0 014.463 5.446.72.72 0 101.413.284A6.003 6.003 0 0012 6zm0 3.12a2.88 2.88 0 00-1.32 5.442l-.588 3.47a.96.96 0 00.946 1.128h1.924a.96.96 0 00.946-1.128l-.588-3.47A2.88 2.88 0 0012 9.12z"/></svg>
+                                        Apple Podcasts
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Navigation -->
+                <section class="week-navigation">
+                    <a href="week4.html" class="nav-btn nav-back">← Back to Week 4</a>
+                    <a href="index.html" class="nav-btn nav-next">Return to Sprint Home →</a>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Readiness Sprint</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function scrollToSection(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                var offset = 110;
+                var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        }
+
+        function updateStepNav() {
+            var sections = ['welcome', 'video', 'experiment', 'eko'];
+            var tabs = document.querySelectorAll('.step-tab');
+            var current = '';
+
+            for (var i = 0; i < sections.length; i++) {
+                var section = document.getElementById(sections[i]);
+                if (section) {
+                    var rect = section.getBoundingClientRect();
+                    if (rect.top <= 160 && rect.bottom >= 160) {
+                        current = sections[i];
+                    }
+                }
+            }
+
+            for (var j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove('active');
+                if (tabs[j].getAttribute('data-target') === current) {
+                    tabs[j].classList.add('active');
+                }
+            }
+        }
+
+        var scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateStepNav, 30);
+        });
+    </script>
+
+    <!-- Eko Chat Bubble -->
+    <script defer data-relevanceai-share-id="f1db6c/91f42824-00dc-4e15-9c4d-c067da9413c0/42eaa7d7-fe19-4d99-9d92-1f9e376e3f88" src="https://app.relevanceai.com/embed/chat-bubble.js" data-share-styles="hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false"></script>
+</body>
+</html>
