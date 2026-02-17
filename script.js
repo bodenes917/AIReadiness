@@ -339,10 +339,80 @@ function showPasswordPrompt(weekNumber, weekTitle) {
 }
 
 function revealContent() {
+    // Show the Eko disclaimer once before revealing content for the first time
+    if (!localStorage.getItem('ekoAgreed')) {
+        showEkoDisclaimer();
+        return;
+    }
     const content = document.querySelector('.week-content');
     if (content) {
         content.style.display = 'block';
     }
+}
+
+// ===== EKO DISCLAIMER MODAL =====
+function showEkoDisclaimer() {
+    const overlay = document.createElement('div');
+    overlay.className = 'eko-disclaimer-overlay';
+    overlay.id = 'eko-disclaimer-overlay';
+
+    overlay.innerHTML = `
+        <div class="eko-disclaimer-modal">
+            <div class="eko-disclaimer-header">
+                <div class="eko-disclaimer-avatar">🤖</div>
+                <div>
+                    <h2>Meet Eko — your reflection partner</h2>
+                    <p class="eko-disclaimer-tagline">A quick read before we begin</p>
+                </div>
+            </div>
+
+            <div class="eko-disclaimer-body">
+                <p class="eko-disclaimer-intro">Your reflection partner for making sense of what you just learned. I'm here for brief, focused conversations using the prompts you've been given — helping you connect new concepts to your actual work and lock in those capabilities.</p>
+
+                <h3 class="eko-disclaimer-subhead">A few things to know:</h3>
+                <ul class="eko-disclaimer-list">
+                    <li>I work best when you use the reflection prompts provided in your course</li>
+                    <li>I'm designed for short conversations (around 5–10 minutes) to process what's fresh</li>
+                    <li>I don't store our conversations or your data — they're anonymous, so capture anything useful in your own notes</li>
+                    <li>I'm not a career coach, therapist, or general AI assistant — just a practical tool for this specific learning moment</li>
+                    <li>For deeper career guidance or personal support, connect with your manager, HR, or an appropriate professional</li>
+                </ul>
+
+                <p class="eko-disclaimer-closing">Ready to reflect? Start with one of your prompts and let's make this learning stick.</p>
+            </div>
+
+            <div class="eko-disclaimer-footer">
+                <label class="eko-disclaimer-check">
+                    <input type="checkbox" id="ekoAgreeCheckbox">
+                    <span>I've read and understand what Eko is and isn't</span>
+                </label>
+                <button class="eko-disclaimer-btn" id="ekoAgreeBtn" disabled>
+                    Let's begin <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Enable button only when checkbox is ticked
+    const checkbox = document.getElementById('ekoAgreeCheckbox');
+    const btn = document.getElementById('ekoAgreeBtn');
+    checkbox.addEventListener('change', function() {
+        btn.disabled = !this.checked;
+    });
+
+    btn.addEventListener('click', function() {
+        if (checkbox.checked) {
+            localStorage.setItem('ekoAgreed', 'true');
+            overlay.classList.add('eko-disclaimer-hiding');
+            setTimeout(() => {
+                overlay.remove();
+                const content = document.querySelector('.week-content');
+                if (content) content.style.display = 'block';
+            }, 300);
+        }
+    });
 }
 
 function hideContent() {
@@ -774,11 +844,36 @@ function initWeekPageFeatures() {
 
     updateStepTabStates(visitedSections);
 
-    // 6. Scroll listener
+    // 6. Run a one-time scan on load to catch sections already in viewport
+    // Only runs when content is visible (returning visitor whose password is already stored).
+    // First-time visitors will have content hidden; sections get detected as they scroll.
+    var weekContentEl = document.querySelector('.week-content');
+    if (weekContentEl && weekContentEl.style.display !== 'none') {
+        updateReadingProgress(sections, visitedSections, weekKey, weekNumber);
+    }
+
+    // 7. Check if auto-complete conditions already met (returning visitor who did everything)
+    checkAutoComplete(weekKey, weekNumber, visitedSections);
+
+    // 8. Scroll listener
     window.addEventListener('scroll', function() {
         updateReadingProgress(sections, visitedSections, weekKey, weekNumber);
         updateBackToTopVisibility();
     });
+}
+
+// Auto-complete a week when both eko is visited AND experiment is done
+function checkAutoComplete(weekKey, weekNumber, visitedSections) {
+    var progress = getProgress();
+    // Already complete — nothing to do
+    if (progress.completedWeeks && progress.completedWeeks.includes(weekKey)) return;
+
+    var ekoVisited = visitedSections.indexOf('eko') !== -1;
+    var experimentDone = !!localStorage.getItem('experimentDone_' + weekKey);
+
+    if (ekoVisited && experimentDone) {
+        completeWeek(weekNumber);
+    }
 }
 
 function updateReadingProgress(sections, visitedSections, weekKey, weekNumber) {
@@ -811,6 +906,8 @@ function updateReadingProgress(sections, visitedSections, weekKey, weekNumber) {
     if (changed) {
         localStorage.setItem('visitedSections_' + weekKey, JSON.stringify(visitedSections));
         updateStepTabStates(visitedSections);
+        // Check if auto-complete conditions are now met
+        checkAutoComplete(weekKey, weekNumber, visitedSections);
     }
 }
 
@@ -861,5 +958,8 @@ function markExperimentDone(weekNumber) {
             '<p>You\'ve marked this experiment as done. Head to the Reflect section to debrief with Eko.</p></div>' +
             '</div>';
     }
+
+    // If the user has already visited the eko section, auto-complete the week
+    checkAutoComplete(weekKey, weekNumber, visitedSections);
 }
 
