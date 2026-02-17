@@ -774,11 +774,36 @@ function initWeekPageFeatures() {
 
     updateStepTabStates(visitedSections);
 
-    // 6. Scroll listener
+    // 6. Run a one-time scan on load to catch sections already in viewport
+    // Only runs when content is visible (returning visitor whose password is already stored).
+    // First-time visitors will have content hidden; sections get detected as they scroll.
+    var weekContentEl = document.querySelector('.week-content');
+    if (weekContentEl && weekContentEl.style.display !== 'none') {
+        updateReadingProgress(sections, visitedSections, weekKey, weekNumber);
+    }
+
+    // 7. Check if auto-complete conditions already met (returning visitor who did everything)
+    checkAutoComplete(weekKey, weekNumber, visitedSections);
+
+    // 8. Scroll listener
     window.addEventListener('scroll', function() {
         updateReadingProgress(sections, visitedSections, weekKey, weekNumber);
         updateBackToTopVisibility();
     });
+}
+
+// Auto-complete a week when both eko is visited AND experiment is done
+function checkAutoComplete(weekKey, weekNumber, visitedSections) {
+    var progress = getProgress();
+    // Already complete — nothing to do
+    if (progress.completedWeeks && progress.completedWeeks.includes(weekKey)) return;
+
+    var ekoVisited = visitedSections.indexOf('eko') !== -1;
+    var experimentDone = !!localStorage.getItem('experimentDone_' + weekKey);
+
+    if (ekoVisited && experimentDone) {
+        completeWeek(weekNumber);
+    }
 }
 
 function updateReadingProgress(sections, visitedSections, weekKey, weekNumber) {
@@ -811,6 +836,8 @@ function updateReadingProgress(sections, visitedSections, weekKey, weekNumber) {
     if (changed) {
         localStorage.setItem('visitedSections_' + weekKey, JSON.stringify(visitedSections));
         updateStepTabStates(visitedSections);
+        // Check if auto-complete conditions are now met
+        checkAutoComplete(weekKey, weekNumber, visitedSections);
     }
 }
 
@@ -861,5 +888,8 @@ function markExperimentDone(weekNumber) {
             '<p>You\'ve marked this experiment as done. Head to the Reflect section to debrief with Eko.</p></div>' +
             '</div>';
     }
+
+    // If the user has already visited the eko section, auto-complete the week
+    checkAutoComplete(weekKey, weekNumber, visitedSections);
 }
 
