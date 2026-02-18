@@ -1098,7 +1098,7 @@
 .back-to-top-btn {
     position: fixed;
     bottom: 28px;
-    left: 24px;
+    right: 24px;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -1130,13 +1130,12 @@
     box-shadow: 0 6px 20px rgba(102,126,234,0.4);
 }
 
-/* On mobile: larger tap target, move to right (chat bubble hidden on mobile) */
+/* On mobile: larger tap target */
 @media (max-width: 768px) {
     .back-to-top-btn {
         width: 48px;
         height: 48px;
         bottom: 20px;
-        left: auto;
         right: 16px;
         font-size: 16px;
     }
