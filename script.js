@@ -581,7 +581,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 function shareWeekCompletion(weekNumber, platform) {
     const weekTitles = {
-        1: "The Learner's Posture",
+        1: "Learning Mode",
         2: "Experiment Like You Mean It",
         3: "Learning Out Loud",
         4: "Integration & Consolidation",
