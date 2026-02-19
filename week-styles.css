@@ -227,13 +227,18 @@
 }
 
 .geek-corner-standalone,
-.week-navigation {
+.week-navigation,
+.complete-week-container {
     display: none;
 }
 
 .geek-corner-standalone.wizard-visible,
-.week-navigation.wizard-visible {
+.complete-week-container.wizard-visible {
     display: block;
+}
+
+.week-navigation.wizard-visible {
+    display: flex;
 }
 
 /* Continue / Back button bar */
@@ -800,8 +805,7 @@
 .tool-download:hover { color: var(--primary-dark); }
 
 /* ===== WEEK NAVIGATION (bottom) ===== */
-.week-navigation {
-    display: flex;
+.week-navigation.wizard-visible {
     justify-content: space-between;
     align-items: center;
     padding: 32px 0 20px;
