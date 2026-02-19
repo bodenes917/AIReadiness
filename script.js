@@ -186,6 +186,36 @@ function showCompletionBadge(weekNumber) {
     }, 3000);
 }
 
+// ===== EXPERIMENT DONE BADGE =====
+function showExperimentDoneBadge() {
+    var messages = [
+        { icon: '💪', title: "Look at you go!", subtitle: "Experiment done. Eko's ready when you are." },
+        { icon: '🧪', title: "Science would be proud!", subtitle: "You actually did the thing. Now go reflect on it." },
+        { icon: '🔥', title: "That's the spirit!", subtitle: "Experimenting > theorising. Every single time." },
+        { icon: '🚀', title: "Experiment: crushed.", subtitle: "Head to Reflect and tell Eko all about it." },
+        { icon: '⚡', title: "You didn't just read about it — you did it.", subtitle: "That's the whole game. Now go debrief." },
+        { icon: '🎯', title: "Nailed it!", subtitle: "The experiment is done. The learning isn't — Eko's waiting." },
+        { icon: '🏋️', title: "Rep complete!", subtitle: "One more rep in the learning gym. Time to reflect." }
+    ];
+    var msg = messages[Math.floor(Math.random() * messages.length)];
+
+    var badge = document.createElement('div');
+    badge.className = 'completion-badge-popup';
+    badge.innerHTML =
+        '<div class="badge-content">' +
+            '<div class="badge-icon">' + msg.icon + '</div>' +
+            '<h3>' + msg.title + '</h3>' +
+            '<p>' + msg.subtitle + '</p>' +
+        '</div>';
+    document.body.appendChild(badge);
+
+    setTimeout(function() { badge.classList.add('show'); }, 100);
+    setTimeout(function() {
+        badge.classList.remove('show');
+        setTimeout(function() { badge.remove(); }, 300);
+    }, 3500);
+}
+
 // ===== EMOJI BURST CELEBRATION =====
 function createEmojiBurst() {
     const emojis = ['🎉', '🎊', '✨', '🌟', '⭐', '💫', '🚀', '🔥', '💪', '👏', '🎯', '💯'];
@@ -1065,6 +1095,9 @@ function markExperimentDone(weekNumber) {
             '<p>You\'ve marked this experiment as done. Head to the Reflect section to debrief with Eko.</p></div>' +
             '</div>';
     }
+
+    // Show a fun celebration popup for the experiment
+    showExperimentDoneBadge();
 
     // If the user has already visited the eko section, auto-complete the week
     checkAutoComplete(weekKey, weekNumber, visitedSections);
