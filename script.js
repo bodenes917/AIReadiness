@@ -264,10 +264,12 @@ function initWizardStepper() {
             if (i === index) tab.classList.add('active');
         });
 
-        // Show geek corner + bottom nav on last step
+        // Show geek corner + bottom nav + complete button on last step only
         var isLast = (index === stepIds.length - 1);
         if (geekCorner) geekCorner.classList.toggle('wizard-visible', isLast);
         if (weekNav) weekNav.classList.toggle('wizard-visible', isLast);
+        var completeContainer = document.querySelector('.complete-week-container');
+        if (completeContainer) completeContainer.classList.toggle('wizard-visible', isLast);
 
         // Scroll to the active section's heading panel (after paint)
         var activeSection = sections[index];
