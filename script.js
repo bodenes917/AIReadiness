@@ -150,6 +150,12 @@ function exportProgress() {
 function resetProgress() {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
         localStorage.removeItem('aiReadinessProgress');
+        // Clear per-week visited sections, experiment flags, and eko agreement
+        for (var w = 1; w <= 5; w++) {
+            localStorage.removeItem('visitedSections_week' + w);
+            localStorage.removeItem('experimentDone_week' + w);
+        }
+        localStorage.removeItem('ekoAgreed');
         location.reload();
     }
 }
@@ -481,20 +487,20 @@ function showEkoDisclaimer() {
             <div class="eko-disclaimer-header">
                 <div class="eko-disclaimer-avatar">🤖</div>
                 <div>
-                    <h2>Meet Eko — your reflection partner</h2>
+                    <h2>Meet Eko, your reflection partner</h2>
                     <p class="eko-disclaimer-tagline">A quick read before we begin</p>
                 </div>
             </div>
 
             <div class="eko-disclaimer-body">
-                <p class="eko-disclaimer-intro">Your reflection partner for making sense of what you just learned. I'm here for brief, focused conversations using the prompts you've been given — helping you connect new concepts to your actual work and lock in those capabilities.</p>
+                <p class="eko-disclaimer-intro">Your reflection partner for making sense of what you just learned. I'm here for brief, focused conversations using the prompts you've been given, helping you connect new concepts to your actual work and lock in those capabilities.</p>
 
                 <h3 class="eko-disclaimer-subhead">A few things to know:</h3>
                 <ul class="eko-disclaimer-list">
                     <li>I work best when you use the reflection prompts provided in your course</li>
                     <li>I'm designed for short conversations (around 5–10 minutes) to process what's fresh</li>
-                    <li>I don't store our conversations or your data — they're anonymous, so capture anything useful in your own notes</li>
-                    <li>I'm not a career coach, therapist, or general AI assistant — just a practical tool for this specific learning moment</li>
+                    <li>I don't store our conversations or your data. They're anonymous, so capture anything useful in your own notes</li>
+                    <li>I'm not a career coach, therapist, or general AI assistant. Just a practical tool for this specific learning moment</li>
                     <li>For deeper career guidance or personal support, connect with your manager, HR, or an appropriate professional</li>
                 </ul>
 
