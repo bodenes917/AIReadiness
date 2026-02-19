@@ -189,13 +189,21 @@ function showCompletionBadge(weekNumber) {
 // ===== EXPERIMENT DONE BADGE =====
 function showExperimentDoneBadge() {
     var messages = [
-        { icon: '💪', title: "Look at you go!", subtitle: "Experiment done. Eko's ready when you are." },
-        { icon: '🧪', title: "Science would be proud!", subtitle: "You actually did the thing. Now go reflect on it." },
-        { icon: '🔥', title: "That's the spirit!", subtitle: "Experimenting > theorising. Every single time." },
-        { icon: '🚀', title: "Experiment: crushed.", subtitle: "Head to Reflect and tell Eko all about it." },
-        { icon: '⚡', title: "You didn't just read about it — you did it.", subtitle: "That's the whole game. Now go debrief." },
-        { icon: '🎯', title: "Nailed it!", subtitle: "The experiment is done. The learning isn't — Eko's waiting." },
-        { icon: '🏋️', title: "Rep complete!", subtitle: "One more rep in the learning gym. Time to reflect." }
+        { icon: '🧙', title: "You're a wizard, Harry.", subtitle: "That experiment didn't stand a chance." },
+        { icon: '🦁', title: "Hakuna Matata!", subtitle: "No worries — you just crushed that experiment." },
+        { icon: '🕶️', title: "I know kung fu.", subtitle: "OK maybe not, but you just nailed that experiment." },
+        { icon: '💡', title: "That's one small step for you...", subtitle: "...one giant leap for your AI skills." },
+        { icon: '🏃', title: "Run, Forrest, run!", subtitle: "Straight to the Reflect tab. Eko's waiting." },
+        { icon: '🎤', title: "I came, I saw, I experimented.", subtitle: "Julius Caesar would be proud. Probably." },
+        { icon: '🍕', title: "You deserve a pizza for that.", subtitle: "Experiment done. Treat yourself." },
+        { icon: '🦸', title: "Not all heroes wear capes.", subtitle: "Some just complete their experiments on time." },
+        { icon: '🧊', title: "Ice cold. You just did that.", subtitle: "Cooler than the other side of the pillow." },
+        { icon: '🐝', title: "To experiment, or not to experiment?", subtitle: "You chose wisely. Shakespeare approves." },
+        { icon: '🚀', title: "Houston, the experiment has landed.", subtitle: "Mission accomplished. Now debrief with Eko." },
+        { icon: '🎬', title: "And the Oscar goes to... you!", subtitle: "Best performance in an AI experiment." },
+        { icon: '🐐', title: "GOAT behaviour.", subtitle: "Greatest Of All Triers. Head to Reflect." },
+        { icon: '🎵', title: "Don't stop me now!", subtitle: "You're having such a good time. Keep going." },
+        { icon: '🍫', title: "Life is like a box of experiments.", subtitle: "You never know what you're gonna learn." }
     ];
     var msg = messages[Math.floor(Math.random() * messages.length)];
 
@@ -403,12 +411,12 @@ function generateCertificate() {
     ctx.fillText('Certificate of Completion', 600, 220);
     
     ctx.font = '32px -apple-system, sans-serif';
-    ctx.fillText('AI Readiness Sprint', 600, 300);
+    ctx.fillText('AI Starter Sprint', 600, 300);
     
     ctx.font = '24px -apple-system, sans-serif';
     ctx.fillStyle = '#666';
     ctx.fillText('This certifies that you have successfully completed', 600, 380);
-    ctx.fillText('all 5 weeks of the AI Readiness Sprint', 600, 420);
+    ctx.fillText('all 5 weeks of the AI Starter Sprint', 600, 420);
     
     const completionDate = new Date().toLocaleDateString('en-US', { 
         year: 'numeric', 
@@ -431,7 +439,7 @@ function generateCertificate() {
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'AI-Readiness-Sprint-Certificate.png';
+        link.download = 'AI-Starter-Sprint-Certificate.png';
         link.click();
     });
 }
@@ -626,7 +634,7 @@ function shareWeekCompletion(weekNumber, platform) {
         5: "Your New Operating System"
     };
     
-    const text = `Just completed Week ${weekNumber}: ${weekTitles[weekNumber]} of the AI Readiness Sprint! 🚀 #AILearning #ProfessionalDevelopment`;
+    const text = `Just completed Week ${weekNumber}: ${weekTitles[weekNumber]} of the AI Starter Sprint! 🚀 #AILearning #ProfessionalDevelopment`;
     const url = window.location.origin;
     
     if (platform === 'twitter') {
@@ -639,7 +647,7 @@ function shareWeekCompletion(weekNumber, platform) {
 }
 
 function shareSprintCompletion(platform) {
-    const text = `🎉 I just completed the entire AI Readiness Sprint! 5 weeks of learning agility, iteration, and workflow transformation. #AILearning #ProfessionalDevelopment #Upskilling`;
+    const text = `🎉 I just completed the entire AI Starter Sprint! 5 weeks of learning agility, iteration, and workflow transformation. #AILearning #ProfessionalDevelopment #Upskilling`;
     const url = window.location.origin;
     
     if (platform === 'twitter') {
@@ -654,7 +662,7 @@ function shareSprintCompletion(platform) {
 function shareToTwitter() {
     const progress = getProgress();
     const completedCount = progress.completedWeeks ? progress.completedWeeks.length : 0;
-    const text = `Making progress on the AI Readiness Sprint! ${completedCount}/5 weeks completed. Building the muscle for AI-powered work. 🚀 #AILearning`;
+    const text = `Making progress on the AI Starter Sprint! ${completedCount}/5 weeks completed. Building the muscle for AI-powered work. 🚀 #AILearning`;
     const url = window.location.origin;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
     window.open(twitterUrl, '_blank', 'width=600,height=400');
