@@ -263,10 +263,17 @@ function initWizardStepper() {
         if (geekCorner) geekCorner.classList.toggle('wizard-visible', isLast);
         if (weekNav) weekNav.classList.toggle('wizard-visible', isLast);
 
-        // Scroll to top of content area
-        var content = document.querySelector('.week-content');
-        if (content) {
-            var top = content.getBoundingClientRect().top + window.pageYOffset - 100;
+        // Scroll to the active section's heading panel
+        var activeSection = sections[index];
+        if (activeSection) {
+            var heading = activeSection.querySelector('.section-heading-panel');
+            var target = heading || activeSection;
+            var stepNav = document.getElementById('stepNav');
+            var navHeight = stepNav ? stepNav.offsetHeight : 0;
+            var weekNavEl = document.querySelector('.week-nav');
+            var weekNavHeight = weekNavEl ? weekNavEl.offsetHeight : 0;
+            var offset = navHeight + weekNavHeight + 12;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: top, behavior: 'smooth' });
         }
     }
