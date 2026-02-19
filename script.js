@@ -189,13 +189,21 @@ function showCompletionBadge(weekNumber) {
 // ===== EXPERIMENT DONE BADGE =====
 function showExperimentDoneBadge() {
     var messages = [
-        { icon: '💪', title: "Look at you go!", subtitle: "Experiment done. Eko's ready when you are." },
-        { icon: '🧪', title: "Science would be proud!", subtitle: "You actually did the thing. Now go reflect on it." },
-        { icon: '🔥', title: "That's the spirit!", subtitle: "Experimenting > theorising. Every single time." },
-        { icon: '🚀', title: "Experiment: crushed.", subtitle: "Head to Reflect and tell Eko all about it." },
-        { icon: '⚡', title: "You didn't just read about it — you did it.", subtitle: "That's the whole game. Now go debrief." },
-        { icon: '🎯', title: "Nailed it!", subtitle: "The experiment is done. The learning isn't — Eko's waiting." },
-        { icon: '🏋️', title: "Rep complete!", subtitle: "One more rep in the learning gym. Time to reflect." }
+        { icon: '🧙', title: "You're a wizard, Harry.", subtitle: "That experiment didn't stand a chance." },
+        { icon: '🦁', title: "Hakuna Matata!", subtitle: "No worries — you just crushed that experiment." },
+        { icon: '🕶️', title: "I know kung fu.", subtitle: "OK maybe not, but you just nailed that experiment." },
+        { icon: '💡', title: "That's one small step for you...", subtitle: "...one giant leap for your AI skills." },
+        { icon: '🏃', title: "Run, Forrest, run!", subtitle: "Straight to the Reflect tab. Eko's waiting." },
+        { icon: '🎤', title: "I came, I saw, I experimented.", subtitle: "Julius Caesar would be proud. Probably." },
+        { icon: '🍕', title: "You deserve a pizza for that.", subtitle: "Experiment done. Treat yourself." },
+        { icon: '🦸', title: "Not all heroes wear capes.", subtitle: "Some just complete their experiments on time." },
+        { icon: '🧊', title: "Ice cold. You just did that.", subtitle: "Cooler than the other side of the pillow." },
+        { icon: '🐝', title: "To experiment, or not to experiment?", subtitle: "You chose wisely. Shakespeare approves." },
+        { icon: '🚀', title: "Houston, the experiment has landed.", subtitle: "Mission accomplished. Now debrief with Eko." },
+        { icon: '🎬', title: "And the Oscar goes to... you!", subtitle: "Best performance in an AI experiment." },
+        { icon: '🐐', title: "GOAT behaviour.", subtitle: "Greatest Of All Triers. Head to Reflect." },
+        { icon: '🎵', title: "Don't stop me now!", subtitle: "You're having such a good time. Keep going." },
+        { icon: '🍫', title: "Life is like a box of experiments.", subtitle: "You never know what you're gonna learn." }
     ];
     var msg = messages[Math.floor(Math.random() * messages.length)];
 
